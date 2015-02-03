@@ -1,2 +1,4 @@
+window.riot = require 'riot/riot'
+require './app'
 window.addEventListener 'load', =>
-  console.log 'initialized!', new Date
+  riot.mount('timer', { start: 0 })
