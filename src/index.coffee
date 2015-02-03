@@ -1,4 +1,5 @@
 window.riot = require 'riot/riot'
 require './app.tag'
 window.addEventListener 'load', =>
-  riot.mount('timer', { start: 0 })
+  [timer] = riot.mount('timer', {})
+  timer.update(items: [{name: 'updated1'}])

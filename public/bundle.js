@@ -50,8 +50,14 @@
 
 	window.addEventListener('load', (function(_this) {
 	  return function() {
-	    return riot.mount('timer', {
-	      start: 0
+	    var timer;
+	    timer = riot.mount('timer', {})[0];
+	    return timer.update({
+	      items: [
+	        {
+	          name: 'updated1'
+	        }
+	      ]
 	    });
 	  };
 	})(this));
@@ -772,20 +778,13 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	riot.tag('timer', '<p>Seconds Elapsed: { time }</p>', function(opts) {
-
-	  this.time = opts.start || 0
-
-	  this.tick = function() {
-	    this.update({ time: ++this.time })
-	  }.bind(this);
-
-	  var timer = setInterval(this.tick, 1000)
-
-	  this.on('unmount', function() {
-	    clearInterval(timer)
-	  })
-
+	riot.tag('timer', '<ul> <li each="{ items }">{ name } </li> </ul>', function(opts) {this.items = [
+	  {
+	    name: 'a'
+	  }, {
+	    name: 'b'
+	  }
+	];
 
 	});
 
