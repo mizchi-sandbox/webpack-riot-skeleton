@@ -15,5 +15,8 @@
     "less-loader": "^0.7.7",
     "style-loader": "^0.8.2",
     "webpack": "^1.4.13"
+  },
+  "devDependencies": {
+    "tag-loader": "^0.2.3"
   }
 }

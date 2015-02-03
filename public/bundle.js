@@ -44,9 +44,9 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	window.riot = __webpack_require__(2);
+	window.riot = __webpack_require__(1);
 
-	__webpack_require__(1);
+	__webpack_require__(2);
 
 	window.addEventListener('load', (function(_this) {
 	  return function() {
@@ -59,28 +59,6 @@
 
 /***/ },
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-	riot.tag('timer', '<p>Seconds Elapsed: { time }</p>', function(opts) {
-
-	  this.time = opts.start || 0
-
-	  this.tick = function() {
-	    this.update({ time: ++this.time })
-	  }.bind(this);
-
-	  var timer = setInterval(this.tick, 1000)
-
-	  this.on('unmount', function() {
-	    clearInterval(timer)
-	  })
-
-
-	});
-
-
-/***/ },
-/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* Riot 2.0.7, @license MIT, (c) 2015 Muut Inc. + contributors */
@@ -789,6 +767,28 @@
 	  this.riot = riot
 
 	})();
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	riot.tag('timer', '<p>Seconds Elapsed: { time }</p>', function(opts) {
+
+	  this.time = opts.start || 0
+
+	  this.tick = function() {
+	    this.update({ time: ++this.time })
+	  }.bind(this);
+
+	  var timer = setInterval(this.tick, 1000)
+
+	  this.on('unmount', function() {
+	    clearInterval(timer)
+	  })
+
+
+	});
+
 
 /***/ }
 /******/ ])

@@ -8,6 +8,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.coffee$/, loader: "coffee" },
+      { test: /\.tag$/, loader: 'tag' }
     ]
   },
 
@@ -15,4 +16,3 @@ module.exports = {
     extensions: ["", ".coffee", ".js"]
   }
 }
-
